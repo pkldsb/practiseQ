@@ -1,0 +1,58 @@
+body{
+    margin: 0;
+}
+.main::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+aside[id="left"]{
+    float: left;
+    width: 230px;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li[id='top_li']~li{
+    margin-top: 20px;
+}
+a{
+    font-size: 12px;
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    color: #f60;
+}
+h1{
+    margin: 0;
+    font-size: 18px;
+    font-weight: bolder;
+    padding:8px 0 16px 40px;
+}
+.li_img_summer{
+    background-image: url(image/dress01.png);
+    background-repeat: no-repeat;
+}
+.li_img_clothe{
+    background-image: url(image/dress02.png);
+    background-repeat: no-repeat;
+}
+.li_img_skirt{
+    background-image: url(image/dress03.png);
+    background-repeat: no-repeat;
+}
+.li_img_trousers{
+    background-image: url(image/dress04.png);
+    background-repeat: no-repeat;
+}
+.li_img_other{
+    background-image: url(image/dress05.png);
+    background-repeat: no-repeat;
+}
+

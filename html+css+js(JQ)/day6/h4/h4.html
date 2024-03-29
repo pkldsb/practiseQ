@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时钟特效</title>
+</head>
+
+<body onload="showTime()">
+    <h1>您好，欢迎访问贵美商城！</h1>
+    <div id="myTime" style="font-weight: bolder;"></div>
+</body>
+
+</html>
+<script>
+    function rulerTime(index) {
+        if (index < 10) {
+            index = '0' + index;
+        }
+        return index;
+    }
+    function showTime() {
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDay();
+        let hour = date.getHours() + 1;
+        let minuter = date.getMinutes() + 1;
+        let seconds = date.getSeconds() + 1;
+        let week = date.getUTCDay;
+        let m = "AM";
+
+        if(hour > 12){
+            hour = hour - 12;
+            m = "PM";
+        }
+
+        let dayArray = new Array('星期天','星期一','星期二','星期三','星期四','星期五','星期六');
+
+        document.getElementById('myTime').innerHTML = year+"年"+rulerTime(month)+"月"+rulerTime(day)+"日"+"  "+
+        rulerTime(hour)+":"+rulerTime(minuter)+":"+rulerTime(seconds)+"  "+m+"  "+dayArray[day];
+    }
+    
+    setInterval("showTime()",1000);
+</script>

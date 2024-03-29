@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>带关闭按钮的滚动广告</title>
+	<style type="text/css">
+		#main {
+			text-align: center;
+		}
+
+		#float {
+			position: absolute;
+			left: 30px;
+			top: 60px;
+			z-index: 1;
+		}
+
+		#close {
+			position: absolute;
+			top: 60px;
+			left: 134px;
+			z-index: 2;
+			cursor: hand;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="close" onClick="adv_close()"><img src="images/close.jpg"></div>
+	<div id="float"><img src="images/advpic.jpg"></div>
+	<div id="main"><img src="images/contentpic.jpg"></div>
+
+	<script>
+		let adv = document.getElementById('float');
+		let close_node = document.getElementById('close');
+
+		let advTop;
+		let advLeft;
+		let closeTop;
+		let closeLeft;
+
+		//获取初始的位置
+		function init(node) {
+			let top, left;
+
+			// 检查浏览器是否支持 currentStyle 属性
+			if (node.currentStyle) {
+				top = parseInt(node.currentStyle.top);
+				left = parseInt(node.currentStyle.left);
+			} else {
+				top = parseInt(window.getComputedStyle(node, null).top);
+				left = parseInt(window.getComputedStyle(node, null).left);
+			}
+
+			return { top, left };
+		}
+
+
+
+		//获取初始位置与滚动条的水平和垂直距离
+		function move(node, top, left) {
+			let s_top = parseInt(document.documentElement.scrollTop || document.body.scrollTop);
+			let s_left = parseInt(document.documentElement.scrollLeft || document.body.scrollLeft);
+
+			node.style.top = top + s_top + 'px';
+			node.style.left = left + s_left + 'px';
+		}
+
+		window.onload = function () {
+			let advPosition = init(adv);
+			let closePosition = init(close_node);
+
+			advTop = advPosition.top;
+			advLeft = advPosition.left;
+			closeTop = closePosition.top;
+			closeLeft = closePosition.left;
+		}
+
+		//滚动条滚动时获取固定的位置
+		window.onscroll = function () {
+			move(adv, advTop, advLeft);
+			move(close_node, closeTop, closeLeft);
+		}
+
+		//关闭时隐藏广告
+		function adv_close() {
+			adv.style.display = "none";
+			close_node.style.display = "none";
+		}
+	</script>
+</body>
+
+</html>

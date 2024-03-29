@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>课工场论坛列表</title>
+    <link href="css/bbs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bbs">
+        <header><span onclick="post()">我要发帖</span></header>
+        <section>
+            <ul id="postList"></ul>
+        </section>
+        <div class="post" id="post">
+            <input class="title" placeholder="请输入标题（1-50个字符）" id="title">
+            所属版块：<select id="sec">
+                <option>请选择版块</option>
+                <option>电子书籍</option>
+                <option>新课来了</option>
+                <option>新手报到</option>
+                <option>职业规划</option>
+            </select>
+            <textarea class="content" id="content"></textarea>
+            <input class="btn" value="发布" onclick="postSuccess()">
+        </div>
+    </div>
+    <script>
+        //点击我要发帖
+        function post() {
+            document.getElementById('post').setAttribute('style', 'display: block');
+        }
+
+        //随机获取图片路径
+        function getRandomPic() {
+            let random = Math.floor(Math.random() * 4) + 1;
+            return "images/tou0" + random + ".jpg";
+        }
+
+
+        //创造li节点
+        function createPost() {
+            let li_e = document.createElement('li');
+            let div_e = document.createElement('div');
+            let img = document.createElement('img');
+            let h1_e = document.createElement('h1');
+            let p_e = document.createElement('p');
+            let p_span = document.createElement('span');
+            let p_span2 = document.createElement('span');
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let day = date.getDay();
+            let hour = date.getHours() + 1;
+            let minuter = date.getMinutes() + 1;
+
+            img.setAttribute('src', getRandomPic());
+            p_span.innerHTML = "版块：职业规划";
+            p_span2.innerHTML = "发表时间：" + year + "-" + month + "-" + day + " " + hour + ":" + minuter;
+
+            div_e.appendChild(img);
+            p_e.appendChild(p_span);
+            p_e.appendChild(p_span2);
+            li_e.appendChild(div_e);
+            li_e.appendChild(h1_e);
+            li_e.appendChild(p_e);
+
+            return li_e;
+        }
+
+
+        //发布帖子
+        function postSuccess() {
+            let titleContent = document.getElementById('title').value;
+            let index = document.getElementById('sec');
+
+            if (titleContent == "") {
+                alert("请输入标题！");
+                return;
+            }
+
+            if (titleContent.length > 50) {
+                alert("标题字符超过50字！");
+                return;
+            }
+
+            if (index.selectedIndex == 0) {
+                alert("请选择板块类型！");
+                return;
+            }
+
+            let li_node = createPost();
+            let h1_node = li_node.firstElementChild.nextElementSibling || li_node.firstChild.nextSibling.nextSibling;
+            h1_node.innerHTML = titleContent;
+            let span1_node = li_node.lastElementChild.firstElementChild || li_node.lastChild.previousSibling.firstChild.nextSibling;
+            span1_node.innerHTML = "板块：" + index.value;
+            document.getElementById('postList').appendChild(li_node);
+
+            document.getElementById('title').value = "";
+            document.getElementById('content').value = "";
+            document.getElementById('sec').selectedIndex = 0;
+            document.getElementById('post').style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

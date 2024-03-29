@@ -1,0 +1,42 @@
+ul{
+    padding: 0;
+    width: 375px;
+    height: auto;
+}
+li{
+    border-bottom: 1px dashed #999999;
+}
+.title{
+    display: block;
+    font-size: large;
+    padding: 10px;
+    text-indent: 10px;
+    color: white;
+    background-color: rgb(233,24,90);
+}
+.goods_dsp{
+    margin: 5px;
+    text-decoration: none;
+    display: block;
+    font-size: small;
+    color: rgb(55,59,60);
+}
+.goods_dsp:hover{
+    color: rgb(233,24,90);
+}
+.goods_dsp:hover .num{
+    background-color: rgb(233,24,90);
+}
+.num{
+    display: inline-block;
+    font-size: small;
+    background-color: rgb(55,59,60);
+    color: white;
+    padding-top: 5px;
+    margin-right: 20px;
+    height: 24px;
+    width: 28px;
+    border-radius: 14px;
+    text-align: center;
+    vertical-align: middle;
+}

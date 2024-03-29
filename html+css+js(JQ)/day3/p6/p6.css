@@ -1,0 +1,65 @@
+h1{
+    font-size: 12px;
+    line-height: 27px;
+    padding-left: 38px;
+    background-image: url(image/1.gif);
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+    border: 1px solid #dedede;
+}
+.div::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+img{
+    border: 1px solid #ececec;
+    margin: 9px;
+    padding: 2px;
+    float: left;
+}
+div[name='tv_imfs']>h2{
+    padding-top: 10px;
+    font-size: 12px;
+    line-height: 27px;
+    line-height: 2;
+}
+div[name='tv_imfs']>p{
+    font-size: 12px;
+    color: #838383;
+    line-height: 2;
+}
+section,header{
+    width: 350px;
+}
+section > ul{
+    padding: 0;
+    margin: 0;
+    line-height: 2;
+    font-size: 12px;
+    color: #838383;
+    list-style: none;
+}
+.li::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+span[id='works_imfs']{
+    float: left;
+    display: block;
+}
+span[id='auther_imfs']{
+    float: right;
+    display: block;
+}
+li > a{
+    text-decoration: none;
+    float: left;
+    color: #838383;
+}
+li > a:hover{
+    color: rgb(5, 5, 179);
+    text-decoration: underline;
+
+}

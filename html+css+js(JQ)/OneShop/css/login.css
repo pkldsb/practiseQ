@@ -1,0 +1,60 @@
+.html_center{
+    margin: 0 auto;
+    width: 990px;
+}
+.clear_float::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.header_font{
+    font-size: 12px;
+    color: #999999;
+}
+.a_font{
+    font-size: 12px;
+    color: blue;
+}
+.float_right{
+    float: right;
+}
+.float_left{
+    float: left;
+}
+.input_css{
+    border: solid #999999;
+    height: 32px;
+    width: 320px;
+}
+.a_border{
+    border: solid #999999;
+}
+::placeholder{
+    font-size: 18px;
+    color: #999999;
+    text-indent: 12px;
+    vertical-align: middle;
+}
+.main_background{
+    height: 475px;
+    background-image: url(../images/login/loadimg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.black_font{
+    font-size: 12px;
+    columns: black;
+}
+.user_font{
+    font-size: 18px;
+}
+.middle_img{
+    vertical-align: middle;
+}
+.footer_font{
+    text-align: center;
+}
+.qq_img{
+    height: 60px;
+    width: 60px;
+}

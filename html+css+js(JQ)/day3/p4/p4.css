@@ -1,0 +1,104 @@
+html{
+    margin:0 auto;
+    width: 990px;
+}
+body{
+    margin: 0;
+}
+.header::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+main{
+    background-image: url(image/banner.png);
+    height: 475px;
+}
+.section::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+form{
+    margin-top: 50px;
+    margin-right: 10px;
+    border: solid white;
+    background-color: white;
+    width: 320px;
+    float: right;
+}
+input[type="checkbox"]{
+    margin-left:16px;
+    margin-top: 4px;
+    vertical-align: middle;
+}
+button{
+    margin-left: 16px;
+    height: 30px;
+    width: 290px;
+    color: white;
+    background-color: #e4393c;
+    border: none;
+}
+.logo_font{
+    color: #6f6e6e;
+    font-size: 130%;
+    font-weight: 400;
+    margin-left: 16px;
+    margin-top: 16px;
+    float: left;
+}
+.logo_img{
+    float: left;
+}
+.vip_font{
+    color: #7c7b7b;
+    font-size: 120%;
+    font-weight: 400;
+    margin-left: 16px;
+}
+.register_font{
+    font-size: 80%;
+    color: red;
+    line-height: 16px;
+    text-decoration: none;
+}
+.register_img{
+    vertical-align: middle;
+    margin-left: 136px;
+}
+::placeholder{
+    font-weight: 500;
+    font-size: 10px;
+    text-indent: 8px;
+}
+.input_text{
+    height: 30px;
+    width: 260px;
+    margin: 0;
+    border: 1px solid #7c7b7b;
+    padding: 0;
+    vertical-align: middle;
+}
+.input_img_lable{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin-left: 16px;
+    border:1px solid #7c7b7b;
+    border-right: 0;
+    vertical-align: middle;
+}
+.input_img{
+    height: 30px;
+    width: 30px;
+}
+.checkbox_font{
+    font-size: 50%;
+    color: #7c7b7b;
+}
+.forgete_font{
+    margin-left: 166px;
+    font-size: 50%;
+    color: #7c7b7b;
+}

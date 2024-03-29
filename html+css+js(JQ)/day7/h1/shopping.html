@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>操作当当购物车页面</title>
+    <link type="text/css" rel="stylesheet" href="css/cartStyle.css" />
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="logo">
+            <img src="images/dd_logo.jpg"><span onclick="close_plan();">关闭</span>
+        </div>
+        <div class="cartList" id="cartList">
+            <ul>
+                <li>商品图片</li>
+                <li>商品信息</li>
+                <li>单价</li>
+                <li>数量</li>
+                <li>总价</li>
+                <li>操作</li>
+            </ul>
+            <ul>
+                <li><img src="images/dog.jpg"></li>
+                <li>我和狗狗活下来了</li>
+                <li>¥<input type="text" name="price" value="21.90"></li>
+                <li><input type="button" name="minus" value="-" onclick="minus(0);"><input type="text" name="amount"
+                        value="1"><input type="button" name="plus" value="+" onclick="plus(0);"></li>
+                <li id="price0">¥21.90</li>
+                <li>
+                    <p onclick="collection();">移入收藏</p>
+                    <p onclick="del(this);">删除</p>
+                </li>
+            </ul>
+            <ul>
+                <li><img src="images/mai.jpg"></li>
+                <li>灰霾来了怎么办</li>
+                <li>¥<input type="text" name="price" value="24.00"></li>
+                <li><input type="button" name="minus" value="-" onclick="minus(1);"><input type="text" name="amount"
+                        value="1"><input type="button" name="plus" value="+" onclick="plus(1);"></li>
+                <li id="price1">¥24.00</li>
+                <li>
+                    <p onclick="collection();">移入收藏</p>
+                    <p onclick="del(this);">删除</p>
+                </li>
+            </ul>
+            <ol>
+                <li id="totalPrice">商品总计：<span></span></li>
+                <li><span onclick="accounts()">结 算</span></li>
+            </ol>
+        </div>
+        <div id="jiesuan"></div>
+    </div>
+
+    <script>
+        //兼容并获取第一个子元素节点
+        function getFirstElementChild(node) {
+            let child = node.firstElementChild;
+            if (!child) {
+                for (child = node.firstChild; child; child = child.nextSibling) {
+                    if (child.nodeType === 1) {
+                        break;
+                    }
+                }
+            }
+            return child && child.nodeType === 1 ? child : null;
+        }
+
+        //兼容并获取下一个元素节点
+        function getNextElementSibling(node) {
+            let nextSibling = node.nextElementSibling;
+            if (!nextSibling) {
+                for (nextSibling = node.nextSibling; nextSibling; nextSibling = nextSibling.nextSibling) {
+                    if (nextSibling.nodeType === 1) {
+                        break;
+                    }
+                }
+            }
+            return nextSibling && nextSibling.nodeType === 1 ? nextSibling : null;
+        }
+
+        //兼容并获取前一个元素节点
+        function getPreviousElementSibling(node) {
+            var previousSibling = node.previousElementSibling;
+            if (!previousSibling) {
+                for (previousSibling = node.previousSibling; previousSibling; previousSibling = previousSibling.previousSibling) {
+                    if (previousSibling.nodeType === 1) {
+                        break;
+                    }
+                }
+            }
+            return previousSibling && previousSibling.nodeType === 1 ? previousSibling : null;
+        }
+
+        //兼容并获取末尾的子元素节点
+        function getLastElementChild(node) {
+            var lastChild = node.lastElementChild;
+            if (!lastChild) {
+                for (lastChild = node.lastChild; lastChild; lastChild = lastChild.previousSibling) {
+                    if (lastChild.nodeType === 1) {
+                        break;
+                    }
+                }
+            }
+            return lastChild && lastChild.nodeType === 1 ? lastChild : null;
+        }
+
+        //获取所有子元素节点
+        function getChildElementNodes(node) {
+            let nodeArr = node.childNodes;
+            let nodeElementArr = [];
+            for (let i = 0; i < nodeArr.length; i++) {
+                if (nodeArr[i].nodeType === 1) {
+                    nodeElementArr.push(nodeArr[i]);
+                }
+            }
+
+            return nodeElementArr;
+        }
+
+        function getBookPrice(node) {
+            return getPreviousElementSibling(getLastElementChild(node)).innerHTML;
+        }
+
+        //通过层次关系访问节点，读取图书价格信息并显示
+        function accounts() {
+            // let ul_node = document.getElementsByClassName('cartList')[0].firstElementChild || document.getElementsByClassName('cartList')[0].firstChild.nextSibling;
+            // let ul2_node = document.getElementsByClassName('cartList')[0].firstElementChild.nextElementSibling || document.getElementsByClassName('cartList')[0].firstChild.nextSibling.nextSibling;
+            // let ol_node = document.getElementsByClassName('cartList')[0].lastElementChild || getElementsByClassName('cartList')[0].lastChild.previousSibiling;
+
+            // let price1 = ul_node.lastElementChild.previousElementSibling.innerHTML || ul_node.lastChild.priviousSibling.innerHTML;
+            // let price2 = ul2_node.lastElementChild.previousElementSibling.innerHTML || ul2_node.lastChild.priviousSibling.innerHTML;
+            // let totalPrice = ol_node.firstElementChild.innerHTML || ol_node.firstChild.nextSibling.innerHTML;
+
+            let list_node = document.getElementById('cartList');
+            let bookArr = getChildElementNodes(list_node);
+
+            let price1 = getBookPrice(bookArr[1]);
+            let price2 = getBookPrice(bookArr[2]);
+            let totalPrice = getFirstElementChild(bookArr[3]).innerHTML;
+
+            let accounts_content = "您本次购买的商品信息如下：" +
+                "<br/>白岩松：白说：" + price1 +
+                "<br/>岛上书店：" + price2 +
+                "<br/>商品共计：" + totalPrice;
+
+            document.getElementById('jiesuan').style.border = '1px solid red';
+            document.getElementById('jiesuan').innerHTML = accounts_content;
+        }
+    </script>
+</body>
+
+</html>

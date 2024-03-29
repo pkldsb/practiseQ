@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职位申请表</title>
+</head>
+<body>
+    <h1>申请表</h1>
+    <form target="_self">
+        <p>
+            <label>姓名：</label>
+            <input type="text" name="name"/>
+        </p>
+        <p>
+            <label>密码：</label>
+            <input type="password" name="password"/>
+        </p>
+        <p>
+            <label>照片：</label>
+            <input type="file" name="选择文件">
+        </p>
+        <p>
+            <label>感兴趣的职位</label>
+            <input type="radio" name="work">
+            <label>&nbsp;web设计</label>
+            <input type="radio" name="work">
+            <label>&nbsp;web开发</label>
+        </p>
+        <p>
+            <label>向往的城市：</label>
+            <select>
+                <option>--请选择--</option>
+                <option>岳阳</option>
+                <option>长沙</option>
+            </select>
+        </p>
+        <p>
+            <label>协议：</label>
+            <textarea name="content" cols="20" rows="5">求职信息必须真实，准确。本网站只负责向企业推荐。
+            </textarea>
+        </p>
+        <p>
+            <input type="checkbox" name="accpet">
+            <label>我认真阅读并接受以上的协议</label>
+        </p>
+        <p>
+            <label>经验：</label>
+            <select>
+                <option>--请选择--</option>
+                <option>一年以下</option>
+                <option>一年以上</option>
+            </select>
+        </p>
+        <p>
+            <input type="submit" value="提交" disabled/>
+            <input type="reset" value="重置"/>
+        </p>
+    </form>
+</body>
+</html>

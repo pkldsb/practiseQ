@@ -1,0 +1,61 @@
+ul{
+    border: solid #dcebf6;
+    width: 245px;
+    list-style: none;
+    padding: 20px 12px 20px 18px;
+    border-radius: 8px;
+}
+h3{
+    margin:0;
+    font-size: 18px;
+    text-indent: 12px;
+}
+img[id="more"]{
+    float: right;
+    margin-top: 5px;
+}
+span[id="shop"]{
+    color: #fc133e;
+}
+img[id="shen"]{
+    position: absolute;
+    top: 11.5%;
+    left: 26%;
+}
+a{
+    font-size: 12px;
+    font-weight: 600;
+    color: #b7000b;
+}
+span[name="li_tag"]{
+    font-size: 12px;
+    color: #b2b2b2;
+}
+span[name="eat_post"]{
+    font-size: 12px;
+    color: #6e757b;
+}
+ul{
+    position: relative;
+}
+.ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+li{
+    float: none;
+    margin-top: 12px;
+}
+.li::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+li > img{
+    float: left;
+}
+li > div[name = "dsp"]{
+    float: right;
+    margin-right: 20px;
+}

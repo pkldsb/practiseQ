@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>课工场论坛列表</title>
+    <link href="css/bbs.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="bbs">
+        <header><span>我要发帖</span></header>
+        <section>
+            <ul></ul>
+        </section>
+        <div class="post">
+            <input class="title" placeholder="请输入标题（1-50个字符）">
+            所属版块：<select>
+                <option>请选择版块</option>
+                <option>电子书籍</option>
+                <option>新课来了</option>
+                <option>新手报到</option>
+                <option>职业规划</option>
+            </select>
+            <textarea class="content"></textarea>
+            <input class="btn" value="发布">
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="../../jquery-3.7.1.js"></script>
+<script>
+    $(function () {
+        //获取随机头像
+        function randomImgSrc() {
+            let imgArr = ["images/tou01.jpg", "images/tou02.jpg", "images/tou03.jpg", "images/tou04.jpg"];
+            let randomIndex = Math.floor(Math.random() * imgArr.length);
+            return imgArr[randomIndex];
+        }
+
+        //点击我要发帖时触发
+        $('header > span').click(function () {
+            $('.post').css('display', 'block');
+        });
+
+
+        //点击发布时触发
+        $('.btn').click(function () {
+            let titleContent = $('.title').val();
+            let selectedContent = $('select').prop('selectedIndex');
+
+            if (titleContent.length == 0) {
+                alert("请输入标题！");
+                return;
+            }
+
+            if (titleContent.length > 50) {
+                alert("标题字符超过50字！");
+                return;
+            }
+
+            if (selectedContent === 0) {
+                alert("请选择板块类型！");
+                return;
+            }
+
+
+            // 创建节点并插入元素
+            let $post_li = $('<li>');
+            let $imgDiv = $('<div>');
+            let $userImg = $('<img>', { 'src': randomImgSrc() });
+            let $h1 = $('<h1>').text(titleContent);
+            let $p = $('<p>');
+
+            let $selectedOption = $('select option:selected');
+            let selectedText = $selectedOption.text();
+            let postTime = '发表时间：2020-7-7 10:13';
+
+            $p.append($('<span>', { 'text': "板块：" + selectedText }));
+            $p.append($('<span>', { 'text': postTime }));
+
+            $imgDiv.append($userImg);
+            $post_li.append($imgDiv);
+            $post_li.append($h1);
+            $post_li.append($p);
+
+            $('section > ul').prepend($post_li);
+
+
+            $('.content').val('');
+            $('.title').val('');
+            $('select').prop('selectedIndex', 0);
+            //发布完成后隐藏post
+            $('.post').css('display', 'none');
+        });
+    });
+</script>

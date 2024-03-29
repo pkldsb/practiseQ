@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算两数之和</title>
+</head>
+<body>
+    <div class="page_content">
+        <button onclick="get_sum()">计算两数之和</button>
+        <div id="getTime"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    function get_sum() {
+        let first_num = prompt("请输入第一个数：", "");
+        
+        while (!first_num || isNaN(first_num)) {
+            first_num = prompt("您输入的不是数字,请重新输入：", "");
+        }
+
+        let second_num = prompt("请输入第二个数：", "");
+        while (!second_num || isNaN(second_num)) {
+            second_num = prompt("您输入的不是数字,请重新输入：", "");
+        }
+
+        let nul = prompt("请输入运算符号(+,-,*,/)：", "");
+        while (nul != "+" && nul != "-" && nul != "*" && nul != "/") {
+            nul = prompt("请输入正确的运算符号(+,-,*,/)：", "");
+        }
+
+        first_num = parseFloat(first_num);
+        second_num = parseFloat(second_num);
+        console.log(isNaN(""), typeof (first_num), typeof (second_num));
+        
+        let sum = 0;
+        switch (nul) {
+            case "+":
+                sum = first_num + second_num;
+                break;
+            case "-":
+                sum = first_num - second_num;
+                break;
+            case "*":
+                sum = first_num * second_num;
+                break;
+            case "/":
+                if (second_num == 0) {
+                    alert("不能除以0");
+                    return;
+                }
+                sum = first_num / second_num;
+                break;
+        }
+        alert("两数运算结果为：" + first_num + nul + second_num + "=" + sum);
+    }
+
+
+
+</script>

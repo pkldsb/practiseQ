@@ -1,0 +1,349 @@
+html{
+    width: 1200px;
+    margin:0 auto;
+}
+body{
+    margin: 0;
+}
+nav[id='top_nav']{
+    padding: 5px;
+    background-image: linear-gradient(#d5d5d5,#ffffff,#f5f5f5);
+}
+nav[id='top_nav']::after{
+    content: '';
+    display: block;
+    clear: both;
+
+}
+span[id='top_goods_spot']{
+    margin-left: 45px;
+}
+ul[id='top_nav_ul']{
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    float:right;
+    margin-right: 45px;
+}
+ul[id='top_nav_ul'] > li{
+    display: inline;
+}
+ul[id='top_nav_ul'] > img{
+    vertical-align: middle;
+}
+.top_font_style{
+    font-family: '黑体';
+    font-size: xx-small;
+    color: #555555;
+}
+.top_l_style{
+    font-size: small;
+    color: #555555;
+}
+.top_a_style{
+    font-family: '黑体';
+    color:#ff4e00;
+    font-size: xx-small;
+    text-decoration: none;
+}
+.top_li_a_style{
+    font-family: '黑体';
+    font-size: xx-small;
+    color: #555555;
+    text-decoration: none;
+}
+.top_li_a_style:hover{
+    color:#ff4e00;
+}
+.top_li_phone_img{
+    vertical-align: middle;
+}
+.drop_down{
+    position: relative; 
+}
+.drop_down_body{
+    position: absolute;
+    display: none;
+    left:-5px;
+    padding-top: 10px;
+    top:18px;
+    z-index: 1;
+}
+.dropdown_menu{
+    width: max-content;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+ul[class="dropdown_menu"] > li{
+    padding:5px;
+}
+.drop_down_body:hover{
+    display: block;
+}
+.drop_down:hover .drop_down_body{
+    display: block;
+}
+div[id="top_find"]{
+    width: 1200px;
+    height: 140px;
+}
+.top_second::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.log_img{
+    float: left;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.car_button{
+    float: right;
+    height: 40px;
+    width: 130px;
+    margin-right: 61px;
+    margin-top: 52px;
+    background-color: #f6f6f6; 
+    border: 1px solid #c2c1c1;
+    cursor: pointer;
+    position:relative;
+}
+.car_button_a{
+    color: #555555;
+    font-size: small;
+    text-align: center;
+    text-decoration: none;
+    position:absolute;
+    top: 10px;
+    left:50px;
+}
+.car_button_a:hover{
+    color:#ff4e00;
+}
+.car_img{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+.second_form{
+    margin-top: 52px;
+    margin-left: 150px;
+    float: left;
+}
+form[id="searchbox"]>span{
+    display: block;
+}
+.search{
+    border: 1px solid #ff3c3c;
+    width:400px;
+    height: 40px;
+    vertical-align: middle;
+}
+.search_button{
+    color: white;
+    background-color: red;
+    border: none;
+    height: 40px;
+    width: 80px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 38px;
+    font-size: small;
+    cursor: pointer;
+}
+.top_third{
+    border-bottom: 2px solid #ff3c3c;
+}
+.top_third::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.top_third_goods_classic {
+    float: left;
+    color: white;
+    background-color: #ff3c3c;
+    width: 220px;
+    margin-right: 10px;
+    padding-top: 10px;
+    height: 30px;
+    text-indent: 35px;
+    vertical-align: middle;
+}
+
+.top_third_chose_font_1 {
+    margin-right: 32px;
+    float: left;
+    font-weight: bold;
+    color: #ff3c3c;
+    padding-top: 10px;
+    height: 30px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.top_third_chose_font {
+    margin-right: 32px;
+    float: left;
+    font-weight: bold;
+    color: black;
+    padding-top: 10px;
+    height: 30px;
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+.top_third_chose_phone {
+    float: right;
+    margin-top: 5px;
+}
+
+
+/* 页脚 */
+.footer_first{
+    margin-left: 110px;
+}
+.footer_first::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.footer_first_logo{
+    width: 240px;
+    height: 160px;
+    float: left;
+}
+.footer_first_img{
+    margin-top: 40px;
+    margin-left: 90px;
+    transition-property: all;
+    transition-timing-function: ease;
+}
+.footer_first_img:hover{
+    transition-duration: 4s;
+    transform: rotate(360deg) scale(1.2);
+}
+.footer_first_h{
+    padding: 3px;
+    display: block;
+    font-size: large;
+    font-weight: 400;
+    text-align: center;
+}
+.fotter_first_dsp{
+    display: block;
+    color: #9b9b9b;
+    text-align: center;
+}
+.footer_first::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.footer_second{
+    margin-top: 70px;
+    margin-left: 80px;
+    margin-bottom: 40px;
+}
+.footer_second::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.footer_second_dl{
+    float: left;
+    margin: 0;
+    margin-right: 80px;
+}
+dl[class="footer_second_dl"] > dd{
+    margin: 0;
+    margin-top: 10px;
+}
+dl[class="footer_second_dl"] > dt{
+        display: block;
+        font-size: large;
+        font-weight: 400;
+}
+.footer_second_dl_a{
+    font-size: smaller;
+    color: #9b9b9b;
+    text-decoration: none;
+    display: block;
+    text-align: start;
+}
+.footer_second_erfont {
+    display: block;
+    margin-top: 10px;
+}
+.footer_second_er{
+    float: left;
+    margin-left: 18px;
+}
+.er:hover{
+    transform: scale(1.2);
+}
+
+.footer_weibo{
+    float: left;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+.weibo_img{
+    vertical-align: middle;
+}
+.footer_second_web_a{
+    padding: 2px;
+    display: inline-block;
+    color: #9b9b9b;
+    vertical-align: middle;
+    text-decoration: none;
+}
+.footer_second_server{
+    float: left;
+    display: block;
+    color: #9b9b9b;
+    font-size: x-small;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+.footer_second_phone{
+    float: left;
+    display: block;
+    color: #ff4e00;
+    font-size: larger;
+    margin-top: 5px;
+    margin-left: 20px;
+}
+hr{
+    color: #9b9b9b;
+}
+.footer_third{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.footer_third::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.footer_third_font{
+    display: block;
+    color: #9b9b9b;
+    font-size: xx-small;
+    text-align: center;
+}
+.footer_third_img{
+    display: block;
+    margin-top: 15px;
+    text-align: center;
+}
+.footer_b_img{
+    width: 98px;
+    height: 33px;
+    margin-left: 10px;
+    margin-right: 10px;
+}

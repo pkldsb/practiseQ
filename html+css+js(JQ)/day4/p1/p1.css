@@ -1,0 +1,36 @@
+section{
+    width: 300px;
+}
+h3{
+    margin: 0;
+    padding: 6px;
+    text-indent: 8px;
+    color: white;
+}
+.deep_blue_white{
+    background-image: linear-gradient(#0064aa,#b0d7f3);
+}
+ul{
+    list-style: none;
+}
+li{
+    margin-top: 20px;
+}
+li > span{
+    display: block;
+    padding: 6px;
+    text-indent: 8px;
+    font-weight: bolder;
+    font-size: 14px;
+    color: #3189d5;
+    background-image: linear-gradient(#e0eff9,#c0e0f7,#e0eff9);
+}
+div[class="a_content"] > a{
+    color: #7a8ca2;
+    text-decoration: none;
+}
+.a_content{
+    margin-top: 20px;
+    text-indent: 8px;
+    text-align: 2;
+}

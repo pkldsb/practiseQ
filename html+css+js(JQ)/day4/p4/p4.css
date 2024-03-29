@@ -1,0 +1,112 @@
+header{
+    background-image: linear-gradient(to top,rgb(205, 205, 205),rgb(255,255,255));
+}
+body{
+    margin: 0;
+}
+.qq_header::after{
+    content:'';
+    display:block;
+    clear: both;
+}
+.qq_bei{
+    float: left;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+.nav_list{
+    position: relative;
+    float: left;
+}
+.nav_list_ul{
+    list-style: none;
+    margin: 0;
+    margin-top: 30px;
+}
+.nav_list_ul::after{
+    content:'';
+    display:block;
+    clear: both;
+}
+.nav_check{
+    color: rgb(12,11,60);
+    font-size: 16px;
+    text-decoration: none;
+}
+.nav_list_ul_li{
+    float: left;
+}
+.cut{
+    float: left;
+}
+.nav_logo{
+    float: left;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+.nav_logo::after{
+    content:'';
+    display:bolck;
+    clear: both;
+}
+.a_img{
+    float: left;
+    margin: 8px;
+    transition-property: all;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+}
+.nav_zhuan{
+    position:  absolute;
+    top: 12px;
+    left: 40px;
+}
+.nav_zhuanjifen{
+    position:  absolute;
+    background-image: url(images/header_05.png);
+    background-size: cover ;
+    top: 12px;
+    left: 40px;
+    width: 27px;
+    height: 23px;
+}
+.nav_zhuanjifen:hover{
+    animation-name: jifen;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.nav_hua{
+    position:  absolute;
+    top: 12px;
+    left: 196px;
+}
+.nav_huajifen{
+    position:  absolute;
+    background-image: url(images/header_09.png);
+    background-size: cover ;
+    top: 12px;
+    left: 196px;
+    width: 27px;
+    height: 23px;
+
+}
+.nav_huajifen:hover{
+    animation-name: jifen;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes jifen{
+    0%{
+        width: 38px;
+    }
+    100%{
+        width: 66px;
+    }
+}
+.a_img:hover{
+    transform: rotate(360deg);
+}

@@ -1,0 +1,23 @@
+.h1{
+    margin: 20px;
+}
+.a_ul{
+    list-style: none;
+}
+.a_ul::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.a_li{
+    float: left;
+    margin:0 10px 0 10px;
+}
+.a_content{
+    display: block;
+    transition-property: all;
+}
+.a_content:hover{
+    transform:scale(1.2) rotate(360deg);
+    transition: 2s;
+}

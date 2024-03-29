@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html排版标签</title>
+    <link href="test.css" rel="stylesheet"/>
+</head>
+<body>
+    <!--标题标签，h1只能有一个,要符合规范-->
+    <!--不允许相互嵌套-->
+    <!-- <h1>一级标题</h1>
+    <h2>二级标题</h2>
+    <h3>三级标题</h3>
+    <h4>四级标题</h4>
+    <h5>五级标题</h5>
+    <h6>六级标题</h6> -->
+
+    <!--段落标签-->
+    <!-- <p>段落标签</p> -->
+
+    <!--div标签，包裹内容，调节样式(相当于一个盒子)-->
+    <div class="div">
+        
+    </div>
+    </body>
+    <script>
+        //12进制显示：16时显示未4PM
+        //实现思路：
+        //获得时间的时分秒
+        //按12小时显示小时 如果hour>12,hour = hour -12;
+        //判断星期几
+        //使用setInterval()定时显示当前时间
+        function showTime(){
+            var today = new Date();
+            var hour = today.getHours();
+            var minuter = today.getMinutes();
+            var seconds = today.getSeconds();
+            var apm = "AM";
+
+            //显示12进制时
+            if(hour > 12){
+                hour = hour - 12;
+                apm = "PM";
+            }
+
+        }
+    </script>
+</html>

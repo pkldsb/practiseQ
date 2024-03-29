@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    let current_date = new Date();
+    let current_hour = current_date.getHours();
+    console.log(current_hour);
+    alert("当前时间为："+current_date);
+
+    let timeArray = new Array("images/smile.gif","images/aftermoon.gif","images/moon.gif");
+    let dayArray = new Array("上午","下午","晚上");
+    let index;
+
+    if(current_hour >= 0 && current_hour < 8){
+        index = 0;
+    }
+
+    if(current_hour >= 8 && current_hour < 16){
+        index = 1;
+    }
+
+    if(current_hour >= 16 && current_hour < 24){
+        index = 2;
+    }
+
+    document.write("<h1>"+dayArray[index]+"好！欢迎来到贵美！</h1><br/>");
+        for(let i = 0;i < current_hour; i++){
+            document.write("<img src='"+timeArray[index]+"'/>");
+        }
+</script>

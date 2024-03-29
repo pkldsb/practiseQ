@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4df;
+}
+h3{
+    margin-top: 0;
+    font-family: '黑体';
+    background-color: #518700;
+    color: white;
+    padding-top: 2px;
+    padding-left: 16px;
+}
+img[id='bang']{
+    margin-left: 4px;
+    width: 25px;
+    height: auto;
+    vertical-align:middle;
+}
+img[name ='tag']{
+    vertical-align:middle;
+}
+.same_img{
+    margin-left: 4px;
+    margin-right: 2px;
+}
+ul{
+    list-style: none;
+}
+li{
+    margin-top: 4px;
+}
+a{
+    font-size: 50%;
+    text-decoration: none;
+    margin-left: 8px;
+    color: #6499c4;
+}
+a:hover{
+    text-decoration: underline;
+}

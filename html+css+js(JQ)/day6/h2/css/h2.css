@@ -1,0 +1,41 @@
+html{
+    width: 844px;
+    margin:  0 auto;
+}
+body{
+    margin: 0;
+}
+div[class = "page_content"]{
+    float: left;
+    border: 1px solid #999;
+}
+.page_content::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+div[class = "page_content"] > div{
+    float: left;
+    border: 1px solid #999;
+}
+img{
+    padding: 10px;
+    border-bottom: 1px solid #999;
+}
+div[class='autumn'] > img{
+    width: 400px;
+    height: 300px;
+}
+a{
+    display: block;
+    padding:10px;
+    width: 400px;
+    text-align: center;
+}
+a[name = update_page]{
+    float: left;
+    display: block;
+    width: 820px;
+    padding: 10px;
+    text-align: center;
+}

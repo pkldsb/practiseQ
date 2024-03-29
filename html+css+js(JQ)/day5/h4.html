@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算成绩</title>
+</head>
+<body>
+    <button onclick=get_grade()>计算学生成绩</button>
+</body>
+</html>
+<script>
+    function get_grade(){
+        let c_num = prompt("请输入考试科目的数量：","");
+
+        if( !c_num || isNaN(c_num)){
+            alert("输入的不是数字！");
+            return;
+        }
+
+        if( !Number.isInteger(c_num) || c_num <= 0){
+            alert("输入数据有误！退出成绩计算！");
+            return;
+        }
+
+        let count = 0;
+
+        for(let i = 1; i <= c_num; i++){
+            let grade = prompt("请输入第"+i+"门成绩：","");
+
+            if(isNaN(grade) || !grade ){
+                alert("输入的不是数字！");
+                return;
+            }
+
+            if(grade < 0 || grade >100){
+                alert("输入数据有误！");
+                return;
+            }
+            count += parseFloat(grade);
+        }
+
+        alert(c_num+"门科目的总成绩是："+count);
+    }
+</script>

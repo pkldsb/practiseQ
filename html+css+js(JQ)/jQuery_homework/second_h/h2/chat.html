@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>QQ简易聊天框</title>
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+
+<body>
+    <section id="chat">
+        <div class="chatBody"></div>
+        <div><img src="images/icon.jpg"></div>
+        <textarea class="chatText"></textarea>
+        <div class="btn"><span>关闭(C)</span><span id="send">发送(S)</span></div>
+    </section>
+</body>
+
+</html>
+<script src="../../jquery-3.7.1.js"></script>
+<script>
+    $(function () {
+        //获取姓名和头像
+        function randomImf() {
+            let nameArr = ["松松", "六月奇迹", "时尚伊人"];
+            let imgArr = ["images/head01.jpg", "images/head02.jpg", "images/head03.jpg"];
+            let name = nameArr[Math.floor(Math.random() * nameArr.length)];
+            let img = imgArr[Math.floor(Math.random() * imgArr.length)];
+            return { name, img };
+        }
+
+        //当点击发送时
+        $('#send').click(function () {
+
+            let textareaValue = $(".chatText").val();
+
+            if (textareaValue.length != 0) {
+                let rImf = randomImf();
+                //一条聊天消息的元素
+                let chatMsgBody ='<section><div>'
+                +'<img src="'+rImf.img+'"/></div>'
+                +'<p>'+rImf.name+'</p>'
+                +'<div>'+textareaValue+'</div></section>';
+                
+                //跟新聊天内容
+                let oldMsg = $('.chatBody').html();
+                $('.chatBody').html(oldMsg+chatMsgBody);
+
+                
+                //添加样式
+                $('.chatBody > section > div:last').addClass('chatContent');
+                //清空聊天框的内容
+                $(".chatText").val('');
+            }
+        });
+
+    });
+</script>

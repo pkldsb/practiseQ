@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax页面</title>
+    <style>
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-content">
+        <input type="button" value="ajax" />
+        <table>
+        </table>
+    </div>
+</body>
+
+</html>
+<script src="../../jquery-3.7.1.js"></script>
+<script>
+
+    $(function () {
+
+
+        let dataArray = [];
+
+        //点击ajax按钮
+        $('input').click(function () {
+            $.ajax({
+                url: 'student.json',
+                success: function (rs) {
+                    $('table').empty();
+                    dataArray = [];
+                    let $t = $('<tr></tr>')
+                        .append($('<td></td>').html('序号'))
+                        .append($('<td></td>').html('学号'))
+                        .append($('<td></td>').html('姓名'));
+                    $('table').append($t);
+                    $.each(rs, function (index, student) {
+                        let $jt = ($('<tr></tr>'))
+                            .append($('<td></td>').html(index + 1))
+                            .append($('<td>id</td>'))
+                            .append($('<td>name</td>'))
+                            .append($('<a href="#"></a>').html('删除'));
+                        $.each(student, function (key, val) {
+                            $jt.find(':contains(' + key + ')').html(val);
+                        })
+                        dataArray.push({ 'id': student.id, 'name': student.name });
+                        $('table').append($jt);
+                    })
+                }
+            });
+        });
+
+
+        //删除并跟新序号索引
+        $('table').on('click', 'tr > a', function () {
+            let indexStu = $(this).parent().index - 1;
+            dataArray.splice(indexStu - 1, 1);
+            $('table').empty();
+            let $t = $('<tr></tr>')
+                .append($('<td></td>').html('序号'))
+                .append($('<td></td>').html('学号'))
+                .append($('<td></td>').html('姓名'));
+            $('table').append($t);
+            $.each(dataArray, function (index, student) {
+                let $jt = ($('<tr></tr>'))
+                    .append($('<td></td>').html(index + 1))
+                    .append($('<td>id</td>'))
+                    .append($('<td>name</td>'))
+                    .append($('<a href="#"></a>').html('删除'));
+                $.each(student, function (key, val) {
+                    $jt.find(':contains(' + key + ')').html(val);
+                })
+                $('table').append($jt);
+            });
+        });
+    });
+</script>
